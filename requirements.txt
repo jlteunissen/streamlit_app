@@ -2,3 +2,8 @@ altair
 pandas
 streamlit
 streamlit_lottie
+numpy
+matplotlib
+boto3
+geopandas
+seaborn
