@@ -15,6 +15,7 @@ import geopandas
 import time as time_module
 
 
+@st.cache_data
 def run_dynamo_query(parameter, time):
     dyn = boto3.resource("dynamodb")
     table_name = "OpenAQ_Jos"
