@@ -4,7 +4,7 @@ from mysql.connector import connect, Error
 
 import streamlit as st
 
-st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="My Webpage", page_icon=":dash:", layout="wide")
 
 #print(st.secrets)
 user = st.secrets['rds']['user']
@@ -59,7 +59,7 @@ def get_names():
 
 with st.container():
     st.write("---")
-    st.header("Ask for new features")
+    st.header(":memo: Ask for new features :thought_balloon:")
     st.write("##")
 
     names = get_names()

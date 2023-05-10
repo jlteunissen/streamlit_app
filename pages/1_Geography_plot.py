@@ -24,12 +24,12 @@ custom_style = {'axes.labelcolor': 'white',
 seaborn.set_style("dark", rc=custom_style)
 
 
-st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="My Webpage", page_icon=":cityscape:", layout="wide")
 
 
 with st.container():
     st.write("---")
-    st.header("Geographical display of the Belgian Air Quality :flag-be:")
+    st.header(":face_in_clouds: Geographical display of the Belgian Air Quality :flag-be:")
     st.write("##")
     text_column, plot_column = st.columns((1,1))
 

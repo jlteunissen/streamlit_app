@@ -7,3 +7,4 @@ matplotlib
 boto3
 geopandas
 seaborn
+mysql-connector-python
