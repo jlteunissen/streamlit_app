@@ -29,7 +29,7 @@ st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
 with st.container():
     st.write("---")
-    st.header("Geographical display of the Belgium Air Quality :flag-be:")
+    st.header("Geographical display of the Belgian Air Quality :flag-be:")
     st.write("##")
     text_column, plot_column = st.columns((1,1))
 

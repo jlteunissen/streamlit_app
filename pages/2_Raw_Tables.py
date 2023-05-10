@@ -14,7 +14,7 @@ st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
 
 with st.container():
     st.write("---")
-    st.header("Tables display of the Belgium Air Quality :flag-be:")
+    st.header("Tables display of the Belgian Air Quality :flag-be:")
     st.write("##")
 
     allp = ['co', 'no2', 'o3', 'pm10', 'pm25', 'so2']
