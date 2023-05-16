@@ -2,21 +2,10 @@ import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
 from PIL import Image
-
-import boto3
-from boto3.dynamodb.conditions import Key, Attr
-
-from collections import Counter
-import numpy as np
-import matplotlib.pyplot as plt
 import seaborn
-import geopandas
-
-import time as time_module
 
 
 seaborn.set(style='ticks', context="talk")
-#plt.style.use("dark_background")
 custom_style = {'axes.labelcolor': 'white',
                 'xtick.color': 'white',
                 'ytick.color': 'white'}
@@ -36,7 +25,6 @@ def load_lottieurl(url):
 
 
 # ---- LOAD ASSETS ----
-#lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
 lottie_coding = load_lottieurl("https://assets4.lottiefiles.com/packages/lf20_YZrGzO2pAP.json")
 img_lottie_animation = Image.open("images/yt_lottie_animation.png")
 
@@ -58,5 +46,3 @@ with st.container():
         st.write("[Learn More >](https://www.airmax.nu/)")
     with right_column:
         st_lottie(lottie_coding, height=300, key="coding")
-
-

@@ -1,12 +1,8 @@
-from collections import Counter
-
 from mysql.connector import connect, Error
-
 import streamlit as st
 
 st.set_page_config(page_title="My Webpage", page_icon=":dash:", layout="wide")
 
-#print(st.secrets)
 user = st.secrets['rds']['user']
 password = st.secrets['rds']['password']
 endpoint = st.secrets['rds']['endpoint']
@@ -38,7 +34,7 @@ def update_db(name, message, email, age):
     sql = "INSERT INTO votes (name, options, email, age) VALUES (%s, %s, %s, %s)"
     values = (name, message, email, age)
     res = run_sql(sql, values)
-    print("res:", res) # if success: empty list, else None
+    print("res:", res)  # if success: empty list, else None
 
     #after submit. update names set
     global names
@@ -78,12 +74,11 @@ with st.container():
             if name in names:
                 st.write(f":red[your name {name} already appears in the database; please provide another name!]")
             elif "" in (name, email, message):
-                st.write(f":orange[not all textboxes are filled. please try again]")
+                st.write(":orange[not all textboxes are filled. please try again]")
             elif age==10:
-                st.write(f":violet[You are probably more than 10 years old. Please update your age]")
+                st.write(":violet[You are probably more than 10 years old. Please update your age]")
             else:
                 if update_db(name, message, email, age):
                     st.write(":green[submitted! Thanks for your interest in AirMax! We will have a look at your request as soon as possible!]")
                 else:
                     st.write(":red[submission did not work. Please try again later. We apologize for the inconvenience]")
-

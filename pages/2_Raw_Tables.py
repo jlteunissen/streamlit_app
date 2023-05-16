@@ -1,11 +1,4 @@
-import requests
 import streamlit as st
-from streamlit_lottie import st_lottie
-from PIL import Image
-
-from collections import Counter
-import numpy as np
-import time as time_module
 import pandas as pd
 
 import utils
