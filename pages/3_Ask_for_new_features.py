@@ -38,12 +38,14 @@ def update_db(name, message, email, age):
     sql = "INSERT INTO votes (name, options, email, age) VALUES (%s, %s, %s, %s)"
     values = (name, message, email, age)
     res = run_sql(sql, values)
+    print("res:", res) # if success: empty list, else None
 
     #after submit. update names set
     global names
     names.add(name)
     print("new names:", names)
-    return
+
+    return not res is None
 
 
 def get_names():
@@ -73,8 +75,6 @@ with st.container():
         submit = st.form_submit_button("Submit feature request")
         if submit:
             print(name, email, age, message)
-            print(type(name), type(age), type(message))
-            #st.write(name, email, age, message)
             if name in names:
                 st.write(f":red[your name {name} already appears in the database; please provide another name!]")
             elif "" in (name, email, message):
@@ -82,7 +82,8 @@ with st.container():
             elif age==10:
                 st.write(f":violet[You are probably more than 10 years old. Please update your age]")
             else:
-                update_db(name, message, email, age)
-
-                st.write(":green[submitted! Thanks for your interest in AirMax! We will have a look at your request as soon as possible]")
+                if update_db(name, message, email, age):
+                    st.write(":green[submitted! Thanks for your interest in AirMax! We will have a look at your request as soon as possible!]")
+                else:
+                    st.write(":red[submission did not work. Please try again later. We apologize for the inconvenience]")
 

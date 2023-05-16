@@ -28,8 +28,6 @@ st.set_page_config(page_title="AirMax Dashboard", page_icon=":wind_blowing_face:
 st.sidebar.success("Select a demo above.")
 
 
-
-
 def load_lottieurl(url):
     r = requests.get(url)
     if r.status_code != 200:
@@ -55,7 +53,7 @@ with st.container():
         st.header("What we do")
         st.write("##")
         st.write(
-            "We are passionate about air quality"
+            "We are passionate about air quality!"
         )
         st.write("[Learn More >](https://www.airmax.nu/)")
     with right_column:
